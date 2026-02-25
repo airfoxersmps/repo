@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - SMPS Tech Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .student-badge {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px 8px 0 0;
+            font-size: 13px;
+            font-weight: 500;
+            position: absolute;
+            top: -38px;
+            left: 0;
+        }
+
+        .form-header {
+            background: linear-gradient(to right, #1e293b, #334155);
+            padding: 2.5rem 2rem;
+            color: white;
+            border-bottom: 4px solid #237494;
+        }
+
+        .submit-btn {
+            background-color: #237494;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1a5a74;
+            transform: translateY(-1px);
+        }
+
+        .input-field {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px 12px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #237494;
+            box-shadow: 0 0 0 3px rgba(35, 116, 148, 0.1);
+        }
+
+        .help-text {
+            font-size: 10px;
+            color: #4b5563;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        label span {
+            color: #e53e3e;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <!-- Header Branding -->
+    <header class="max-w-5xl mx-auto w-full mb-12 flex justify-between items-center">
+        <div class="flex flex-col">
+            <div class="text-2xl font-[900] text-[#1e293b] leading-tight tracking-tight">
+                <span class="text-[#0067b1]">SMPS</span>&nbsp;<span>TECH LAB</span>
+                <span class="text-[8px] align-top font-bold">TM</span>
+            </div>
+            <div class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.2em] mt-1">Engineering Intelligent
+                Power</div>
+        </div>
+    </header>
+
+    <div class="form-container mt-10">
+        <!-- Student Badge -->
+        <div class="student-badge">
+            Student (Pass Valid Only On 26/02 From 2-5 PM)
+        </div>
+
+        <!-- New Stylized Header -->
+        <div class="form-header">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-black tracking-tighter uppercase mb-1">Vision Summit 2026</h1>
+                    <p class="text-blue-300 text-sm font-bold uppercase tracking-widest">Design to Manufacturing
+                        Excellence</p>
+                </div>
+                <div class="text-right border-l-0 md:border-l md:border-slate-500 md:pl-6">
+                    <div class="text-sm font-bold text-slate-400">FEBRUARY 25 - 26</div>
+                    <div class="text-xs font-medium text-slate-300">BENGALURU, INDIA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-8 md:p-12">
+            <h2 class="text-xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-user-circle mr-3 text-blue-600"></i>
+                Visitor Registration Form
+            </h2>
+
+            <form id="registrationForm" class="space-y-8">
+                <!-- Row 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <label>Name <span>*</span></label>
+                        <input type="text" required class="input-field" placeholder="Full Name">
+                    </div>
+                    <div>
+                        <label>Email ID <span>*</span></label>
+                        <input type="email" required class="input-field" placeholder="example@email.com">
+                        <p class="help-text">This will be used to send transaction acknowledgement.</p>
+                    </div>
+                    <div>
+                        <label>Country Code <span>*</span></label>
+                        <select class="input-field bg-white">
+                            <option>+91 ( INDIA )</option>
+                            <option>+1 ( USA )</option>
+                            <option>+44 ( UK )</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <label>Mobile/Whatsapp <span>*</span></label>
+                        <input type="tel" required class="input-field" placeholder="10-digit number">
+                        <p class="help-text">This will be used to send transaction acknowledgement.</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label>College / Institution Name <span>*</span></label>
+                        <input type="text" required class="input-field"
+                            placeholder="Enter your full college or company name">
+                    </div>
+                </div>
+
+                <!-- Submit Action -->
+                <div class="flex justify-center pt-6">
+                    <button type="submit"
+                        class="submit-btn text-white px-20 py-4 rounded-full font-bold text-lg shadow-lg uppercase tracking-widest">
+                        Submit Registration
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="mt-auto py-12 text-center text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase">
+        © 2026 SMPS Tech Lab • R&D Ecosystem Partner
+    </footer>
+
+    <script>
+        // Form Submission Logic
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-[100] p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-2xl p-10 max-w-sm w-full text-center shadow-2xl">
+                    <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-3xl text-[#237494]"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-2 tracking-tight">Success!</h3>
+                    <p class="text-gray-500 mb-8 text-sm leading-relaxed">Your registration for <strong>Vision Summit 2026</strong> has been received. Please check your inbox for the confirmation email.</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-[#1e293b] text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-colors uppercase tracking-widest text-xs">Close</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        });
+    </script>
+</body>
+
+</html>
